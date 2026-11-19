@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://binegocom.github.io/ChatOFF-Pages/sitemap.xml

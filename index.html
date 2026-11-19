@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatOFF — %100 Çevrimdışı ve Gizli Cihaz İçi Yapay Zekâ Asistanı</title>
+  <meta name="description" content="ChatOFF is a 100% offline, privacy-first on-device AI assistant for iPhone and iPad. Powered by local LiteRT-LM & GGUF models with zero cloud tracking." />
+  <meta name="robots" content="index, follow" />
+  <meta name="apple-itunes-app" content="app-id=6836574646" />
+  <link rel="canonical" href="https://binegocom.github.io/ChatOFF-Pages/" />
+  <link rel="alternate" hreflang="tr" href="https://binegocom.github.io/ChatOFF-Pages/" />
+  <link rel="alternate" hreflang="en" href="https://binegocom.github.io/ChatOFF-Pages/?lang=en" />
+  <link rel="alternate" hreflang="de" href="https://binegocom.github.io/ChatOFF-Pages/?lang=de" />
+  <link rel="alternate" hreflang="fr" href="https://binegocom.github.io/ChatOFF-Pages/?lang=fr" />
+  <link rel="alternate" hreflang="it" href="https://binegocom.github.io/ChatOFF-Pages/?lang=it" />
+  <link rel="alternate" hreflang="es" href="https://binegocom.github.io/ChatOFF-Pages/?lang=es" />
+  <link rel="alternate" hreflang="pt" href="https://binegocom.github.io/ChatOFF-Pages/?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://binegocom.github.io/ChatOFF-Pages/" />
+  <link rel="icon" type="image/png" href="https://binegocom.github.io/ChatOFF-Pages/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="https://binegocom.github.io/ChatOFF-Pages/assets/icon-512.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ChatOFF" />
+  <meta property="og:title" content="ChatOFF — 100% Offline On-Device AI Assistant" />
+  <meta property="og:description" content="Private AI running 100% offline on iPhone and iPad with LiteRT-LM & GGUF. Zero cloud servers, local SQLite memory, document analysis, tasks, and AI Studio." />
+  <meta property="og:url" content="https://binegocom.github.io/ChatOFF-Pages/" />
+  <meta property="og:image" content="https://binegocom.github.io/ChatOFF-Pages/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ChatOFF — 100% Offline On-Device AI Assistant" />
+  <meta name="twitter:description" content="Private AI running 100% offline on iPhone and iPad with zero cloud tracking." />
+  <meta name="twitter:image" content="https://binegocom.github.io/ChatOFF-Pages/assets/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ChatOFF",
+    "operatingSystem": "iOS 16.4, iPadOS 16.4",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "BineGo Teknoloji",
+      "email": "binego.com@gmail.com"
+    },
+    "url": "https://binegocom.github.io/ChatOFF-Pages/",
+    "image": "https://binegocom.github.io/ChatOFF-Pages/assets/icon-512.png",
+    "description": "100% offline, privacy-first on-device AI assistant with local LiteRT-LM & GGUF inference, SQLite memory, tasks, document analysis, and AI Studio."
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #131722;
+      --surface-2: #1b2130;
+      --border: rgba(255, 255, 255, 0.09);
+      --text: #f3f5f9;
+      --muted: #9ba3b5;
+      --accent: #3b82f6;
+      --accent-2: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #172036 0%, var(--bg) 60%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11, 13, 18, 0.82);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+    }
+    .nav-links { display: flex; align-items: center; gap: 20px; font-size: 0.95rem; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); text-decoration: none; }
+    .lang-select {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+    }
+    .hero {
+      padding: 84px 0 56px;
+      text-align: center;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      border: 1px solid var(--border);
+      transition: transform 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: transparent; }
+    .btn-secondary { background: var(--surface); color: var(--text); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin: 40px 0 64px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .card h3 { font-size: 1.12rem; margin-bottom: 10px; color: var(--text); }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .specs {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 64px;
+    }
+    .specs h2 { font-size: 1.4rem; margin-bottom: 16px; }
+    .spec-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .spec-item strong { display: block; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; }
+    .spec-item span { font-size: 1.02rem; font-weight: 600; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="./" class="brand">
+        <img src="./assets/icon-512.png" alt="ChatOFF Logo" width="34" height="34" style="border-radius:9px;" />
+        <span>ChatOFF</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./" class="active" data-i18n="nav_home">Ana Sayfa</a>
+        <a href="./privacy/" data-i18n="nav_privacy">Gizlilik Politikası</a>
+        <a href="./support/" data-i18n="nav_support">Destek & SSS</a>
+        <a href="./terms/" data-i18n="nav_terms">Kullanım Koşulları</a>
+        <select id="langSelect" class="lang-select" aria-label="Language">
+          <option value="tr">Türkçe (TR)</option>
+          <option value="en">English (EN)</option>
+          <option value="de">Deutsch (DE)</option>
+          <option value="fr">Français (FR)</option>
+          <option value="it">Italiano (IT)</option>
+          <option value="es">Español (ES)</option>
+          <option value="pt">Português (PT)</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="pill" data-i18n="hero_pill">100% Çevrimdışı • Sıfır Veri Toplama • Cihaz İçi LLM</div>
+      <h1 data-i18n="hero_title">İnternetsiz, %100 Gizli ve Yerel Yapay Zekâ Asistanı</h1>
+      <p data-i18n="hero_sub">
+        ChatOFF; sohbetlerinizi, kişisel belleğinizi, belgelerinizi, görevlerinizi ve AI Studio projelerinizi bulut sunucularına göndermeden doğrudan iPhone ve iPad donanımınızda işler.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="./privacy/" data-i18n="cta_privacy">Gizlilik Garantisi</a>
+        <a class="btn btn-secondary" href="./support/" data-i18n="cta_support">Destek Merkezi</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3 data-i18n="f1_title">Cihaz Üzerinde Çıkarım (LiteRT-LM & GGUF)</h3>
+        <p data-i18n="f1_desc">Apple Silicon (Metal GPU) üzerinde çalışan yerleşik Qwen3.5 sinir ağı modeli sayesinde uçak modunda bile kesintisiz yanıt üretir. Hesap veya API anahtarı gerekmez.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f2_title">Yerel SQLite Bellek & Kişiselleştirme</h3>
+        <p data-i18n="f2_desc">Sohbet geçmişiniz ve tercihleriniz yalnızca cihazınızdaki şifreli uygulama kum havuzunda (SQLite) saklanır; hiçbir sunucuya aktarılmaz.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f3_title">Görevler & Apple Takvim / Anımsatıcılar</h3>
+        <p data-i18n="f3_desc">Mesajlarınızdan otomatik görev ve tarih çıkarır; yalnızca onay verdiğiniz görevleri yerel Apple Takvim ve Anımsatıcılar uygulamanıza ekler.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f4_title">Çevrimdışı Belge Analizi</h3>
+        <p data-i18n="f4_desc">Seçtiğiniz PDF, metin ve kaynak dosyalarını internete yüklemeden cihaz içinde özetler ve sorularınızı yanıtlar.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f5_title">AI Studio & Canlı Proje Önizleme</h3>
+        <p data-i18n="f5_desc">Doğal dil komutlarıyla çevrimdışı web ve uygulama projeleri üretir, izole WebView içinde canlı önizler ve tam kaynak kodunu ZIP olarak dışa aktarır.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="f6_title">9 Yerleşik Arayüz Dili</h3>
+        <p data-i18n="f6_desc">Türkçe, İngilizce, Almanca, Fransızca, İtalyanca, İspanyolca, Portekizce, Kürtçe (Kurmancî) ve sağdan sola (RTL) Sorani dil kataloglarıyla tam yerelleştirme.</p>
+      </article>
+    </section>
+
+    <section class="specs">
+      <h2 data-i18n="specs_title">Teknik Özellikler & Uyumluluk</h2>
+      <div class="spec-list">
+        <div class="spec-item"><strong>Platform</strong><span>iOS 16.4+ / iPadOS 16.4+ (arm64)</span></div>
+        <div class="spec-item"><strong>Bundle ID</strong><span>com.binego.chatoff</span></div>
+        <div class="spec-item"><strong>Veri Politikası</strong><span data-i18n="spec_data">Sıfır Veri Toplama (100% Offline)</span></div>
+        <div class="spec-item"><strong>Erişilebilirlik</strong><span>VoiceOver, Dynamic Type (200%), Dark Mode</span></div>
+        <div class="spec-item"><strong>Geliştirici</strong><span>BineGo Teknoloji (Mustafa Şahinli)</span></div>
+        <div class="spec-item"><strong>İletişim</strong><span><a href="mailto:binego.com@gmail.com">binego.com@gmail.com</a></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 BineGo Teknoloji. All rights reserved.</span>
+      <div>
+        <a href="./privacy/">Privacy Policy</a> ·
+        <a href="./support/">Support</a> ·
+        <a href="./terms/">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        nav_home: "Home", nav_privacy: "Privacy Policy", nav_support: "Support & FAQ", nav_terms: "Terms of Use",
+        hero_pill: "100% Offline • Zero Data Collection • On-Device LLM",
+        hero_title: "Private, 100% On-Device Artificial Intelligence",
+        hero_sub: "ChatOFF processes your conversations, personal memory, documents, tasks, and AI Studio projects directly on your iPhone and iPad hardware without ever contacting a cloud server.",
+        cta_privacy: "Privacy Guarantee", cta_support: "Support Center",
+        f1_title: "On-Device Inference (LiteRT-LM & GGUF)",
+        f1_desc: "Powered by an embedded Qwen3.5 neural model running on Apple Silicon (Metal GPU). Works completely in Airplane Mode with no account or API key.",
+        f2_title: "Local SQLite Memory & Personalization",
+        f2_desc: "Your chat history and preferences stay strictly inside your device's local SQLite sandbox and are never transmitted externally.",
+        f3_title: "Tasks & Apple Calendar / Reminders",
+        f3_desc: "Automatically extracts action items from your notes and syncs approved tasks directly with native Apple Calendar and Reminders.",
+        f4_title: "Offline Document Analysis",
+        f4_desc: "Summarize and query local PDF, text, and code documents entirely on-device without uploading files to external servers.",
+        f5_title: "AI Studio & Live Sandboxed Preview",
+        f5_desc: "Generate, inspect, edit, and preview projects inside an isolated offline WebView and export complete source archives as ZIP.",
+        f6_title: "9 Built-In UI Languages",
+        f6_desc: "Complete native localization across English, Turkish, German, French, Italian, Spanish, Portuguese, Kurdish (Kurmanji), and RTL Kurdish (Sorani).",
+        specs_title: "Technical Specifications & Compliance",
+        spec_data: "Zero Data Collected (100% Offline)"
+      },
+      de: {
+        nav_home: "Startseite", nav_privacy: "Datenschutz", nav_support: "Support & FAQ", nav_terms: "Nutzungsbedingungen",
+        hero_pill: "100% Offline • Keine Datenerfassung • Lokales LLM",
+        hero_title: "Privater, 100% lokaler KI-Assistent auf Ihrem Gerät",
+        hero_sub: "ChatOFF verarbeitet Ihre Gespräche, Notizen, Dokumente, Aufgaben und AI-Studio-Projekte direkt auf Ihrem iPhone und iPad – ohne Cloud-Server.",
+        cta_privacy: "Datenschutzgarantie", cta_support: "Support-Center",
+        specs_title: "Technische Daten & Compliance",
+        spec_data: "Keine Datenerfassung (100% Offline)"
+      },
+      fr: {
+        nav_home: "Accueil", nav_privacy: "Confidentialité", nav_support: "Support & FAQ", nav_terms: "Conditions",
+        hero_pill: "100% Hors Ligne • Aucune Collecte de Données • LLM Local",
+        hero_title: "Intelligence Artificielle 100% Privée sur l'Appareil",
+        hero_sub: "ChatOFF traite vos conversations, votre mémoire locale, vos documents, vos tâches et vos projets AI Studio directement sur votre iPhone et iPad.",
+        cta_privacy: "Politique de Confidentialité", cta_support: "Centre d'Assistance",
+        specs_title: "Spécifications Techniques",
+        spec_data: "Aucune donnée collectée (100% Hors Ligne)"
+      },
+      it: {
+        nav_home: "Home", nav_privacy: "Privacy", nav_support: "Supporto", nav_terms: "Termini",
+        hero_pill: "100% Offline • Zero Dati Raccolti • LLM sul Dispositivo",
+        hero_title: "Assistente IA 100% Privato e Offline sul Dispositivo",
+        hero_sub: "ChatOFF elabora conversazioni, memoria, documenti, attività e progetti AI Studio direttamente su iPhone e iPad senza alcun server cloud.",
+        cta_privacy: "Informativa Privacy", cta_support: "Centro Supporto",
+        specs_title: "Specifiche Tecniche",
+        spec_data: "Nessun dato raccolto (100% Offline)"
+      },
+      es: {
+        nav_home: "Inicio", nav_privacy: "Privacidad", nav_support: "Soporte", nav_terms: "Términos",
+        hero_pill: "100% Offline • Cero Recopilación de Datos • LLM Local",
+        hero_title: "Inteligencia Artificial 100% Privada en tu Dispositivo",
+        hero_sub: "ChatOFF procesa tus conversaciones, memoria, documentos, tareas y proyectos de AI Studio directamente en tu iPhone y iPad sin servidores en la nube.",
+        cta_privacy: "Política de Privacidad", cta_support: "Centro de Soporte",
+        specs_title: "Especificaciones Técnicas",
+        spec_data: "Cero datos recopilados (100% Offline)"
+      },
+      pt: {
+        nav_home: "Início", nav_privacy: "Privacidade", nav_support: "Suporte", nav_terms: "Termos",
+        hero_pill: "100% Offline • Zero Recolha de Dados • LLM no Dispositivo",
+        hero_title: "Inteligência Artificial 100% Privada no Dispositivo",
+        hero_sub: "O ChatOFF processa as suas conversas, memória, documentos, tarefas e projetos AI Studio diretamente no seu iPhone e iPad sem servidores na nuvem.",
+        cta_privacy: "Política de Privacidade", cta_support: "Centro de Suporte",
+        specs_title: "Especificações Técnicas",
+        spec_data: "Zero dados recolhidos (100% Offline)"
+      }
+    };
+    const sel = document.getElementById("langSelect");
+    function applyLang(lang) {
+      const dict = I18N[lang];
+      if (!dict) { if (lang === "tr") location.reload(); return; }
+      const base = I18N.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        el.textContent = dict[k] || base[k] || el.textContent;
+      });
+    }
+    const urlLang = new URLSearchParams(location.search).get("lang");
+    if (urlLang && (I18N[urlLang] || urlLang === "tr")) {
+      sel.value = urlLang;
+      if (urlLang !== "tr") applyLang(urlLang);
+    }
+    sel.addEventListener("change", e => applyLang(e.target.value));
+  </script>
+</body>
+</html>

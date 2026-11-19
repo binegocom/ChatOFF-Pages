@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://binegocom.github.io/ChatOFF-Pages/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://binegocom.github.io/ChatOFF-Pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://binegocom.github.io/ChatOFF-Pages/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://binegocom.github.io/ChatOFF-Pages/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://binegocom.github.io/ChatOFF-Pages/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://binegocom.github.io/ChatOFF-Pages/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://binegocom.github.io/ChatOFF-Pages/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://binegocom.github.io/ChatOFF-Pages/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://binegocom.github.io/ChatOFF-Pages/"/>
+  </url>
+  <url>
+    <loc>https://binegocom.github.io/ChatOFF-Pages/privacy/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://binegocom.github.io/ChatOFF-Pages/support/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://binegocom.github.io/ChatOFF-Pages/terms/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
